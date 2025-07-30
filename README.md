@@ -27,9 +27,9 @@ exit
 INFO:    Cleaning up image...
 ```
 
-The container runs largely in isolation, and to be able to access files in folders located on the host you have to use the `--bind` option that allows you to mount directories from your host file system into the container at runtime, for instance `apptainer shell --bind /cluster/projects/nn1000k:/opt/uio molsimplify_v1.8.0.sif` makes all the content of the `nn1000K` project folder on the host accessible in `/opt/uio` inside the container.
+The container runs largely in isolation, and to be able to access files in folders located on the host you have to use the `--bind` option that allows you to mount directories from your host file system into the container at runtime, for instance `apptainer shell --bind /cluster/projects/nn1000k:/opt/uio molsimplify_1.8.0.sif` makes all the content of the `nn1000K` project folder on the host accessible in `/opt/uio` inside the container.
 
-Should there be a `disk quota exceeded` error when pulling the container image make sure that these temporary folders or their equivalent for Singularity are correctly defined (here in `/cluster/projects/nn1000k`):
+Should there be a `disk quota exceeded` error when pulling the container image make sure that these temporary folders or their equivalent for Singularity are correctly defined (here I am pointing to `/cluster/projects/nn1000k`):
 
 ```
 export APPTAINER_CACHEDIR=/cluster/projects/nn1000k
