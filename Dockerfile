@@ -6,6 +6,7 @@ RUN mamba create -n molsimp python=3.8 && \
 
 # Install molSimplify via conda, from GitHub
 RUN wget -q -nc --no-check-certificate -P /var/tmp https://github.com/hjkgrp/molSimplify/archive/refs/tags/v1.8.0.tar.gz && \
+    mkdir -p /opt/src && \
     tar -x -f /var/tmp/v1.8.0.tar.gz -C /opt/src -z && \
     . /opt/conda/etc/profile.d/conda.sh && \
     conda activate molsimp && \
