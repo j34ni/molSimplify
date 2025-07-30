@@ -11,9 +11,7 @@ RUN wget -q -nc --no-check-certificate -P /var/tmp https://github.com/hjkgrp/mol
     conda activate molsimp && \
     cd /var/tmp/molSimplify-1.8.0 && \
     conda env update --file devtools/conda-envs/mols.yml && \
-    # Pin NumPy to a compatible version
-    conda install "numpy<1.20" -y && \
-    pip install . --no-deps && \
+    pip install . && \
     rm -rf /var/tmp/molSimplify-1.8.0 /var/tmp/v1.8.0.tar.gz
 
 # Copy the start.sh script
