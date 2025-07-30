@@ -138,3 +138,4 @@ export APPTAINER_TMPDIR=/cluster/projects/nn1000k
 If you use this container recipe and/or image please kindly cite:
 
 Iaquinta, J. (2025). j34ni/molSimplify: Version 1.8.0 (v1.8.0). Zenodo. https://doi.org/10.5281/zenodo.xxx
+
