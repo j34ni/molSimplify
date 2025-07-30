@@ -6,15 +6,14 @@ RUN mamba create -n molsimp python=3.8 && \
 
 # Install molSimplify via conda, from GitHub
 RUN wget -q -nc --no-check-certificate -P /var/tmp https://github.com/hjkgrp/molSimplify/archive/refs/tags/v1.8.0.tar.gz && \
-    tar -x -f /var/tmp/v1.8.0.tar.gz -C /var/tmp -z && \
+    mkdir -p /opt/src && \
+    tar -x -f /var/tmp/v1.8.0.tar.gz -C /opt/src -z && \
     . /opt/conda/etc/profile.d/conda.sh && \
     conda activate molsimp && \
-    cd /var/tmp/molSimplify-1.8.0 && \
+    cd /opt/src/molSimplify-1.8.0 && \
     conda env update --file devtools/conda-envs/mols.yml && \
-    # Pin NumPy to a compatible version
-    conda install "numpy<1.20" -y && \
-    pip install . --no-deps && \
-    rm -rf /var/tmp/molSimplify-1.8.0 /var/tmp/v1.8.0.tar.gz
+    pip install -e . --no-deps && \
+    rm -rf /var/tmp/v1.8.0.tar.gz
 
 # Copy the start.sh script
 COPY ./start.sh /opt/start.sh
