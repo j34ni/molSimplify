@@ -5,16 +5,16 @@ This is a container recipe for molSimplify, an open source toolkit, developed by
 
 Pull the container image using `apptainer pull docker://quay.io/jeani/molsimplify:1.8.0`, this will create a file called `molsimplify_1.8.0.sif` in the directory where you did it.
 
-To gain interactive shell access inside the container start it and do `apptainer shell molsimplify_1.8.0.sif`; There you first have to activate the molSimplify environment by doing `source /opt/start.sh`, the prompt will change to `(molsimp)` and now you can run commands interactively, for instance `pytest`:
+To gain interactive shell access inside the container start it and do `apptainer shell molsimplify_1.8.0.sif`; There you first have to activate the molSimplify environment by doing `source /opt/start.sh`, the prompt will change to `(molsimp)` and now you can run commands interactively, for instance `pytest` to execute the tests in `/opt/src/molSimplify-1.8.0/tests`:
 
 ```
-apptainer shell --bind /cluster/projects/nn1000k:/opt/uio molsimplify_1.8.0.sif
+apptainer shell molsimplify_1.8.0.sif
 apptainer> source /opt/start.sh
-(molsimp) Apptainer> cd /opt/uio/molSimplify-1.8.0
+(molsimp) Apptainer> cd /opt/src/molSimplify-1.8.0
 (molsimp) Apptainer> pytest tests/
 ==================================================================================================== test session starts ====================================================================================================
 platform linux -- Python 3.8.15, pytest-8.3.5, pluggy-1.5.0
-rootdir: /var/tmp/molSimplify-1.8.0
+rootdir: /var/src/molSimplify-1.8.0
 configfile: pyproject.toml
 plugins: resource-path-1.4.0, anyio-4.1.0
 collected 1171 items                                                                                                                                                                                                        
