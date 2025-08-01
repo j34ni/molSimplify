@@ -133,6 +133,11 @@ export APPTAINER_CACHEDIR=/cluster/projects/nn1000k
 export APPTAINER_TMPDIR=/cluster/projects/nn1000k
 ```
 
+### Warning: Potential conflicts with home directory files/folders 
+Remnants from previous installations can cause conflicts, such as permission issues or read-only errors. To avoid problems inspect your home directory for folders like `~/.conda`, `~/.cache/{pip,tensorflow,keras}`, `~/.keras`, etc. and delete/rename/move these if necessary.
+
+
+
 ## Citation
 
 If you use this container recipe and/or image please kindly cite:
